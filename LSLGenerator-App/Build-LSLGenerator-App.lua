@@ -1,4 +1,4 @@
-project "App"
+project "LSLGenerator-App"
    kind "ConsoleApp"
    language "C++"
    cppdialect "C++20"
@@ -6,18 +6,19 @@ project "App"
    staticruntime "off"
 
    files { "Source/**.h", "Source/**.cpp" }
+   libdirs { "libs" }
 
    includedirs
    {
       "Source",
 
 	  -- Include Core
-	  "../Core/Source"
+	  "../LSLCore/Source"
    }
 
    links
    {
-      "Core"
+      "LSLCore"
    }
 
    targetdir ("../Binaries/" .. OutputDir .. "/%{prj.name}")

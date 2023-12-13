@@ -1,8 +1,8 @@
 -- premake5.lua
-workspace "New Project"
+workspace "LSL Generator"
    architecture "x64"
    configurations { "Debug", "Release", "Dist" }
-   startproject "App"
+   startproject "LSLGenerator-App"
 
    -- Workspace-wide build options for MSVC
    filter "system:windows"
@@ -10,8 +10,8 @@ workspace "New Project"
 
 OutputDir = "%{cfg.system}-%{cfg.architecture}/%{cfg.buildcfg}"
 
-group "Core"
-	include "Core/Build-Core.lua"
+group "LSLCore"
+	include "LSLCore/Build-LSLCore.lua"
 group ""
 
-include "App/Build-App.lua"
+include "LSLGenerator-App/Build-LSLGenerator-App.lua"
